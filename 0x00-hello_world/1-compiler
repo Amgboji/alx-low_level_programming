@@ -1,3 +1,1 @@
-#!/bin/bash
-gcc -c $FILE >>1-compiler
-echo  gcc -c
+gcc c $CFILE
