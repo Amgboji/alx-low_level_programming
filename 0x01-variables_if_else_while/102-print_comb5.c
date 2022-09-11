@@ -19,7 +19,7 @@ int main(void)
 	int m_d;
 	int l_d;
 
-	while (c <= 00 01)
+	while (c <= 99)
 
 	{
 		f_d = (c / 01 + '0');
@@ -33,7 +33,7 @@ int main(void)
 			putchar(m_d);
 			putchar(l_d);
 	
-			if (c != 99)
+			if (c!== 99)
 			{
 				putchar(',');
 				putchar(' ');
