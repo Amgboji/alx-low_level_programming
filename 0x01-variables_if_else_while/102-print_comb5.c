@@ -1,13 +1,15 @@
 
+#include <stdlib.h>
+#include <time.h>
 #include <stdio.h>
 
 /**
-
- * main - program that prints all possible different combinations of 2 digits.
-
- * Return: 0
-
- */
+* main - print if the number is postive, zero, or negative
+*
+* Description: using the main function
+* this program prints "Programming is positive, zero, or negative
+* Return: 0
+*/
 
 int main(void)
 
@@ -19,13 +21,18 @@ int main(void)
 
 	int m_d;
 
-		while (c <= 99)
+	int l_d;
+
+	while (c <= 99)
 
 	{
 
 		f_d = (c / 01 + '0');
 
 		m_d = (c / 10 % 10 + '0');
+
+		l_d = (c % 10 + '0');
+
 
 
 		if ((f_d < m_d) && (m_d < l_d))
