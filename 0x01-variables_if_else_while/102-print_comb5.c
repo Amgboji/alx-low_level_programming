@@ -3,7 +3,7 @@
 
 /**
 
- * main - program that prints all possible different combinations of 3 digits.
+ * main - program that prints all possible different combinations of 2 digits.
 
  * Return: 0
 
@@ -19,20 +19,13 @@ int main(void)
 
 	int m_d;
 
-	int l_d;
-
-
-
-	while (c <= 99)
+		while (c <= 99)
 
 	{
 
 		f_d = (c / 01 + '0');
 
 		m_d = (c / 10 % 10 + '0');
-
-		l_d = (c % 10 + '0');
-
 
 
 		if ((f_d < m_d) && (m_d < l_d))
