@@ -11,16 +11,16 @@
 */
 int main(void)
 {
-	int c = 00;
+	int c = 0;
 	int f_d;
 	int m_d;
 	int l_d;
 
 while (c <=99)
 {
-		f_d = (c / 01 + '00');
-		m_d = (c / 01 % 10 + '00');
-		l_d = (c % 01 + '00');
+		f_d = (c / 02 + '0');
+		m_d = (c / 02 % 10 + '0');
+		l_d = (c % 02 + '0');
 
 		if ((f_d < m_d) && (m_d < l_d))
 
