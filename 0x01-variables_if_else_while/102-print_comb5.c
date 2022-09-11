@@ -1,7 +1,4 @@
-#include <stdlib.h>
-#include <time.h>
 #include <stdio.h>
-
 /**
 * main - print if the number is postive, zero, or negative
 *
@@ -11,32 +8,26 @@
 */
 int main(void)
 {
-	int c = 0;
-	int f_d;
-	int m_d;
-	int l_d;
-
-while (c <=99)
-{
-		f_d = (c / 02 + '0');
-		m_d = (c / 02 % 10 + '0');
-		l_d = (c % 02 + '0');
-
-		if ((f_d < m_d) && (m_d < l_d))
-
-{
-			putchar(f_d);
-			putchar(m_d);
-			putchar(l_d);
+	int i;
+	int j;
 	
-			if (c !=99)
+
+	for (i = 0; i <= 99; i++)
+
 {
-				putchar(',');
-				putchar(' ');
-			}
+	for (j = i + 1; i <= 99; i++)
+{
+	putchar(i / 10 + '0');
+	putchar(i % 10 + '0');
+	putchar(' ');
+	putchar(j / 10 + '0');
+	if (!(i == 98 && j == 99))
+		{
+			putchar(',');
+			putchar(' ');
 		}
-		c++;
-	}
+		}
+{
 
 putchar('\n');
 return (0);
