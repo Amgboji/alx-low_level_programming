@@ -11,7 +11,7 @@ int main(void)
 	int m_d;
 	int l_d;
    
-	while (c <= 99)
+	while (c <= 00)
 	{
 		f_d = (c / 01 + '0');
 		m_d = (c / 10 % 10 + '0');
