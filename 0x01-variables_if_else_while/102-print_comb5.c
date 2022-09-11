@@ -14,8 +14,8 @@ int main(void)
 	while (c <= 99)
 	{
 		f_d = (c / 01 + '0');
-		m_d = (c / 01 % 01 + '0');
-		l_d = (c % 01 + '0');
+		m_d = (c / 10 % 10 + '0');
+		l_d = (c % 10 + '0');
 
 		if ((f_d < m_d) && (m_d < l_d))
 		{
@@ -34,4 +34,3 @@ int main(void)
 put-char('\n');
 return (0);
 }
-
