@@ -19,7 +19,7 @@ int main(void)
 	int m_d;
 	int l_d;
 
-	while (c <= 99)
+	while (c <= 00 01)
 
 	{
 		f_d = (c / 01 + '0');
