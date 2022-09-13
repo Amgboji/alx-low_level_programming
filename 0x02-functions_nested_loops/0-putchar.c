@@ -4,13 +4,17 @@
  * main - program that return 
  *
  * Descriptio: Program that print Putchar, follow by new line 
+ * return always 0
  */
 
-int main ()
+int main()
+
+
 
 {
-	Putchar("print Putchar");
-	Putchar('\n');
+	putchar('_');
+	putchar('putchar');
+	putchar('\n');
 
 	return 0;
 
