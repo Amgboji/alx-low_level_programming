@@ -1,13 +1,14 @@
 #include <stdio.h>
 
 /**
- * main - program that return 
+ * main-program thatreturn
  *
  * Descriptio: Program that print Putchar, follow by new line 
+ *
  * return always 0
  */
 
-int main()
+int main(void)
 
 
 
