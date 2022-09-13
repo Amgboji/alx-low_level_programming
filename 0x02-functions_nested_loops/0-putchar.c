@@ -2,15 +2,13 @@
 
 /**
  * main-program thatreturn
- *
- * Descriptio: Program that print Putchar, follow by new line 
- *
+ * Descriptio:Program that
+ * print putchar,follow by new line
  * return always 0
+ *
  */
 
 int main(void)
-
-
 
 {
 	putchar('_');
@@ -21,8 +19,8 @@ int main(void)
 	putchar('h');
 	putchar('a');
 	putchar('r');
-	putchar('\n');
 
-	return 0;
+	putchar(' \n ');
 
-	}	
+	return (0);
+	{
