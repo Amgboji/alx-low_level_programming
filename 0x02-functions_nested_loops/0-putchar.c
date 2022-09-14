@@ -1,15 +1,15 @@
-#include <stdio.h>
+#include <stdio.>
 
 /**
- * main-program thatreturn
+ * main - program thatreturn
  * Descriptio:Program that
  * print putchar,follow by new line
  * return always 0
  *
  */
 
-int main(void)
 
+int main (void)  
 {
 	putchar('_');
 	putchar('p');
@@ -19,8 +19,9 @@ int main(void)
 	putchar('h');
 	putchar('a');
 	putchar('r');
-
 	putchar('\n');
 
 	return (0);
+
+	int _putchar(char c);
 }
