@@ -1,14 +1,8 @@
-#include <stdio.>
+#include "main.h";
 
-/**
- * main - program thatreturn
- * Descriptio:Program that
- * print putchar,follow by new line
+/** main - print putchar
  * return always 0
- *
  */
-
-
 int main (void)  
 {
 	putchar('_');
@@ -22,6 +16,4 @@ int main (void)
 	putchar('\n');
 
 	return (0);
-
-	int _putchar(char c);
 }
