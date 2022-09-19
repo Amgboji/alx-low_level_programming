@@ -1,24 +1,28 @@
-#include "main.h"                                                                                                   
-                                                                                                                    
-/**                                                                                                                 
- *  * main - rev_string - reverse the string.                                                                          
- *   *                                                                                                                  
- *    *Description: pointer to strings.                                                                                  
- *     * Return: void                                                                                                     
- *      */                                                                                                                 
-void rev_string(char *s);                                                                        
-int i, j, k, temp;                                                                                          
-                                                                                                                    
-i=0                                                                                                                 
-while (s[i] ! = "\0)                                                                                                
-                                                                                                                    
-{                                                                                             i++;                                                           
-}                                                                                                                                                       
-k=0;                                                                            j=i-1;                                                                                                              
-while (k<j)                                                                                            	                                                         {                     
-	        temp = s[k]                                                                     s[k] = s[j]                                                                     s[j] = temp;
-		k++;
-		j--;
-}
+#include "holberton.h"
 
+/**
+ * rev_string - rev string
+ * @s: string
+ */
+
+void rev_string(char *s)
+{
+	char *t = s;
+	char n[1000];
+	short c = 0;
+
+	while (*s != '\0')
+	{
+		n[c] = *s;
+		s++;
+		c++;
+	}
+	c = 0;
+
+	while (s > t)
+	{
+		s--;
+		*s = n[c];
+		c++;
+	}
 }
