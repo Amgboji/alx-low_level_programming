@@ -1,5 +1,5 @@
 #include <main.h>
-
+#include <stdio.h>
 /**
 * _memset -fill a memory with constant byte
 * @s: Address to memory block
