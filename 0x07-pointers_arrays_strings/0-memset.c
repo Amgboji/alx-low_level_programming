@@ -1,5 +1,4 @@
 #include <main.h>
-#include <stdio.h>
 /**
 * _memset -fill a memory with constant byte
 * @s: Address to memory block
@@ -8,6 +7,8 @@
 *
 * return: pointer to the memory block
 */
+
+int main()
 
 char *_memset(char *s, char b, unsigned int n);
 
