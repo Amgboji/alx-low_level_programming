@@ -5,8 +5,8 @@
  *void prototypes()
  *int prototypes()
  *char prototypes()
- *_putchar.c
  */
+void _putchar.c;
 void reverse_array(int *a, int n);
 void print_number(int n);
 void print_buffer(char *b, int size);
