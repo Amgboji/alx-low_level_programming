@@ -8,7 +8,6 @@
 * return: pointer to the memory block
 */
 
-int main()
 
 char *_memset(char *s, char b, unsigned int n);
 
@@ -18,5 +17,6 @@ char *_memset(char *s, char b, unsigned int n);
 {
 	s[n - 1] =b;
 	n--;
+	return (s);
 }
 return (s);
