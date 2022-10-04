@@ -1,23 +1,41 @@
 #include "main.h"
 
 /**
-* create_array -> creating array
-* @size: size of array to be created
-* @c: character an array is initialized with
-* Return: a pointer to an array
+* str_concat -> string concatinating function
+* @s1: string 1
+* @s2: string 2
+* Return: string 1 + string 2
 */
-char *create_array(unsigned int size, char c)
+char *str_concat(char *s1, char *s2)
 {
-	unsigned int i;
+	int i = 0, j = 0, l = 0, k = 0;
 	char *s;
 
-	if (size == 0)
-		return (NULL);
-	s = (char *)malloc(size * sizeof(char));
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+	while (s1[i])
+		i++;
+	while (s2[j])
+		j++;
+
+	l = i + j;
+	s = (char *)malloc(l * sizeof(char) + 1);
 	if (s == NULL)
 		return (NULL);
-	for (i = 0; i < size; i++)
-		s[i] = c;
-
+	j = 0;
+	while (k < l)
+	{
+		if (k < i)
+			s[k] = s1[k];
+		if (k >= i)
+		{
+			s[k] = s2[j];
+			j++;
+		}
+		k++;
+	}
+	s[k] = '\0';
 	return (s);
 }
