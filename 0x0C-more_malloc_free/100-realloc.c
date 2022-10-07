@@ -1,54 +1,119 @@
 #include "main.h"
 #include <stdlib.h>
-
+#include <stdio.h>
+int find_len(char *str);
+char *create_xarray(int size);
+char *iterate_zeroes(char *str);
+void get_prod(char *prod, char *mult, int digit, int zeroes);
+void add_nums(char *final_prod, char *next_prod, int next_len);
 /**
- * _realloc - Reallocates a memory block using malloc and free.
- * @ptr: A pointer to the memory previously allocated.
- * @old_size: The size in bytes of the allocated space for ptr.
- * @new_size: The size in bytes for the new memory block.
- *
- * Return: If new_size == old_size - ptr.
- *         If new_size == 0 and ptr is not NULL - NULL.
- *         Otherwise - a pointer to the reallocated memory block.
- */
-void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
+* find_len - Finds the length of a string.
+* @str: The string to be measured.
+*
+* Return: The length of the string.
+*/
+int find_len(char *str)
 {
-	void *mem;
-	char *ptr_copy, *filler;
-	unsigned int index;
-
-	if (new_size == old_size)
-		return (ptr);
-
-	if (ptr == NULL)
-	{
-		mem = malloc(new_size);
-
-		if (mem == NULL)
-			return (NULL);
-
-		return (mem);
-	}
-
-	if (new_size == 0 && ptr != NULL)
-	{
-		free(ptr);
-		return (NULL);
-	}
-
-	ptr_copy = ptr;
-	mem = malloc(sizeof(*ptr_copy) * new_size);
-
-	if (mem == NULL)
-	{
-		free(ptr);
-		return (NULL);
-	}
-
-	filler = mem;
-for (index = 0; index < old_size && index < new_size; index++)
-		filler[index] = *ptr_copy++;
-
-	free(ptr);
-	return (mem);
+int len = 0;
+while (*str++)
+len++;
+return (len);
 }
+/**
+* create_xarray - Creates an array of chars and initializes it with
+* the character 'x'. Adds a terminating null byte.
+* @size: The size of the array to be initialized.
+*
+* Description: If there is insufficient space, the
+* function exits with a status of 98.
+* Return: A pointer to the array.
+*/
+char *create_xarray(int size)
+{
+char *array;
+int index;
+array = malloc(sizeof(char) * size);
+if (array == NULL)
+exit(98);
+for (index = 0; index < (size - 1); index++)
+array[index] = 'x';
+array[index] = '\0';
+return (array);
+}
+/**
+* iterate_zeroes - Iterates through a string of numbers containing
+* leading zeroes until it hits a non-zero number.
+* @str: The string of numbers to be iterate through.
+*
+* Return: A pointer to the next non-zero element.
+*/
+char *iterate_zeroes(char *str)
+{
+while (*str && *str == '0')
+str++;
+return (str);
+}
+/**
+* get_digit - Converts a digit character to a corresponding int.
+* @c: The character to be converted.
+*
+* Description: If c is a non-digit, the function
+* exits with a status of 98.
+* Return: The converted int.
+*/
+int get_digit(char c)
+{
+int digit = c - '0';
+if (digit < 0 || digit > 9)
+{
+printf("Error\n");
+exit(98);
+}
+return (digit);
+}
+/**
+* get_prod - Multiplies a string of numbers by a single digit.
+* @prod: The buffer to store the result.
+* @mult: The string of numbers.
+* @digit: The single digit.
+* @zeroes: The necessary number of leading zeroes.
+*
+* Description: If mult contains a non-digit, the function
+* exits with a status value of 98.
+*/
+void get_prod(char *prod, char *mult, int digit, int zeroes)
+{
+int mult_len, num, tens = 0;
+mult_len = find_len(mult) - 1;
+mult += mult_len;
+while (*prod)
+{
+*prod = 'x';
+prod++;
+}
+prod--;
+while (zeroes--)
+{
+*prod = '0';
+prod--;
+}
+for (; mult_len >= 0; mult_len--, mult--, prod--)
+{
+if (*mult < '0' || *mult > '9')
+{
+printf("Error\n");
+exit(98);
+}
+num = (*mult - '0') * digit;
+num += tens;
+*prod = (num % 10) + '0';
+tens = num / 10;
+}
+if (tens)
+*prod = (tens % 10) + '0';
+}
+/**
+* add_nums - Adds the numbers stored in two strings.
+* @final_prod: The buffer storing the running final product.
+* @next_prod: The next product to be added.
+* @next_len: The length of next_prod.
