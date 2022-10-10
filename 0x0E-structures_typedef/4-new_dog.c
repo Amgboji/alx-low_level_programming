@@ -17,7 +17,8 @@ int _strlen(char *str)
 
 	while (*str++)
 		len++;
-return (len);
+
+	return (len);
 }
 
 /**
@@ -41,7 +42,7 @@ char *_strcopy(char *dest, char *src)
 }
 
 /**
-* new_dog - Creates a new dog.
+ * new_dog - Creates a new dog.
  * @name: The name of the dog.
  * @age: The age of the dog.
  * @owner: The owner of the dog.
@@ -65,7 +66,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(doggo);
 		return (NULL);
 	}
-doggo->owner = malloc(sizeof(char) * (_strlen(owner) + 1));
+
+	doggo->owner = malloc(sizeof(char) * (_strlen(owner) + 1));
 	if (doggo->owner == NULL)
 	{
 		free(doggo->name);
